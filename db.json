@@ -1,0 +1,102 @@
+{
+  "products": [
+    {
+      "name": "Fridge",
+      "code": "Tn94",
+      "price": 35000,
+      "manufacturer": null,
+      "category": "техника",
+      "weight": 50,
+      "quantity": 7,
+      "id": 1
+    },
+    {
+      "name": "Table",
+      "code": "Sn29",
+      "price": 2000,
+      "manufacturer": null,
+      "category": "мебель",
+      "weight": 2,
+      "quantity": 0,
+      "id": 3
+    },
+    {
+      "name": "TV",
+      "code": "B62",
+      "price": 32000,
+      "manufacturer": "LG",
+      "category": "техника",
+      "weight": 5,
+      "quantity": 3,
+      "id": 4
+    },
+    {
+      "name": "Book1",
+      "code": "v5",
+      "price": 500,
+      "manufacturer": "e-books",
+      "category": "книги",
+      "weight": 0.5,
+      "quantity": 8,
+      "id": 5
+    },
+    {
+      "name": "iPhone X",
+      "code": "Pf4",
+      "price": 70000,
+      "manufacturer": "Apple",
+      "category": "телефоны",
+      "weight": 1,
+      "quantity": 11,
+      "id": 6
+    },
+    {
+      "name": "Book2",
+      "code": "vs79",
+      "price": 1500,
+      "manufacturer": null,
+      "category": "книги",
+      "weight": 1,
+      "quantity": 0,
+      "id": 7
+    },
+    {
+      "name": "Sumsung A5",
+      "code": "n14",
+      "price": 50000,
+      "manufacturer": null,
+      "category": "телефоны",
+      "weight": 1.5,
+      "quantity": 3,
+      "id": 8
+    },
+    {
+      "name": "Sofa",
+      "code": "Er32",
+      "price": 8000,
+      "manufacturer": "Maria",
+      "category": "мебель",
+      "weight": 20,
+      "quantity": 9,
+      "id": 9
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "мебель"
+    },
+    {
+      "id": 2,
+      "name": "техника"
+    },
+    {
+      "id": 3,
+      "name": "книги"
+    },
+    {
+      "id": 4,
+      "name": "телефоны"
+    }
+  ]
+}

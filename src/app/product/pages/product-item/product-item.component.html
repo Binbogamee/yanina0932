@@ -1,0 +1,71 @@
+<form [formGroup]="productForm">
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <div class="form-group mt-3">
+        Название
+        <input type="text" class="form-control" id="name" placeholder="Название" formControlName="name"
+          [ngClass]="{'has-error': productForm.get('name').invalid && productForm.get('name').touched}">
+        <small class="form-text text-muted">обязательное поле длиной до 100 символов</small>
+      </div>
+    </div>
+    <div class="col-12 mt-2 col-lg-6">
+      <div class="form-group">
+        Артикул
+        <input type="text" class="form-control" id="code" placeholder="Артикул" formControlName="code"
+          [ngClass]="{'has-error': productForm.get('code').invalid && productForm.get('code').touched}">
+        <small class="form-text text-muted">обязательное поле длиной до 100 символов</small>
+      </div>
+    </div>
+    <div class="col-12 mt-2 col-lg-6">
+      <div class="form-group">
+        Цена
+        <input type="number" class="form-control" id="price" placeholder="Цена" formControlName="price"
+          [ngClass]="{'has-error': productForm.get('price').invalid && productForm.get('price').touched}">
+        <small class="form-text text-muted">обязательное поле</small>
+      </div>
+    </div>
+    <div class="col-12 mt-2 col-lg-6">
+      <div class="form-group">
+        Производитель
+        <input type="text" class="form-control" id="manufacturer" placeholder="Производитель"
+          formControlName="manufacturer"
+          [ngClass]="{'has-error': productForm.get('manufacturer').invalid && productForm.get('manufacturer').touched}">
+        <small class="form-text text-muted">не обязательное поле длиной до 100 символов</small>
+      </div>
+    </div>
+    <div class="col-12 mt-2 col-lg-6">
+      <div class="form-group">
+        Категория
+        <select class="form-control" formControlName="category"
+          [ngClass]="{'has-error': productForm.get('category').invalid && productForm.get('category').touched}">
+          <option value=""></option>
+          <option *ngFor="let item of categories">{{item.name}}</option>
+        </select>
+        <small class="form-text text-muted">обязательное поле</small>
+      </div>
+    </div>
+    <div class="col-12 mt-2 col-lg-6">
+      <div class="form-group">
+        Вес
+        <input type="number" class="form-control" id="weight" placeholder="Вес" formControlName="weight"
+          [ngClass]="{'has-error': productForm.get('weight').invalid && productForm.get('weight').touched}">
+        <small class="form-text text-muted">обязательное поле</small>
+      </div>
+    </div>
+    <div class="col-12 mt-2 col-lg-6">
+      <div class="form-group">
+        Кол-во на складе
+        <input type="number" class="form-control" id="quantity" placeholder="Количество" formControlName="quantity"
+          [ngClass]="{'has-error': productForm.get('quantity').invalid && productForm.get('quantity').touched}">
+        <small class="form-text text-muted">обязательное поле</small>
+      </div>
+    </div>
+  </div>
+</form>
+<div class="row-3 mt-2 col-lg-6">
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary" [disabled]="productForm.invalid"
+      (click)="onSaveProduct()">Сохранить</button>
+    <button class="btn btn-danger mx-2" *ngIf="id" (click)="onDeleteProduct()">Удалить</button>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-lg-2 mt-2">
+            <button class="btn btn-primary" (click)="linkToItem()">Добавить</button>
+        </div>
+        <div class="col-sm-12 col-lg-4 mt-2">
+            Категории
+            <select name="category" [(ngModel)]="filterCategory" (click)="onFilter()">
+                <option value="all">Все категории</option>
+                <option *ngFor="let item of categories">{{item.name}}</option>
+            </select>
+        </div>
+        <div class="col-sm-12 col-lg-4 mt-2">
+            Все товары/в наличии
+            <select name="presence" [(ngModel)]="filterPresence" (click)="onFilter()">
+                <option value="all">Все товары</option>
+                <option value="presence">В наличии</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 mt-3">
+            Для сортировки нажмите на столбцы "Цена" или "Количество"
+        </div>
+    </div>
+    <div class="table-responsive-md">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Название</th>
+                    <th scope="col">Категория</th>
+                    <th scope="col">Вес</th>
+                    <th scope="col" (click)="onSortPrice()">Цена</th>
+                    <th scope="col" (click)="onSortQuantity()">Количество</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of filterArray">
+                    <td (click)="linkToItem(product.id)">{{product.name}}</td>
+                    <td (click)="linkToItem(product.id)">{{product.category}}</td>
+                    <td (click)="linkToItem(product.id)">{{product.weight}}</td>
+                    <td (click)="linkToItem(product.id)">{{product.price}}</td>
+                    <td>
+                        <button class="quantity" (click)="onMinusQuantity(product.id)">- </button>
+                        <div class="quantity-value">{{product.quantity}} </div>
+                        <button class="quantity" (click)="onPlusQuantity(product.id)">+</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
